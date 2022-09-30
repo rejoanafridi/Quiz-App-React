@@ -1,0 +1,100 @@
+.question-container {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.question-title {
+	background-color: rgb(28, 39, 97);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10rem;
+	margin-bottom: 5rem;
+	padding: 0 5rem;
+	border-radius: 1.5rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.question-title h3 {
+	color: white;
+	font-size: 2rem;
+	font-weight: 700;
+	width: 100%;
+}
+.question-hints {
+	display: flex;
+	gap: 2rem 4rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.answer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	color: black;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	width: 500px;
+	border-radius: 1.5rem;
+	background-color: rgb(28, 39, 97);
+	color: #ffff;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.answer:hover,
+.answer.active {
+	background-color: #613af0;
+	color: #fff;
+}
+
+.answer.correct {
+	animation: correct 3s ease forwards;
+}
+@keyframes correct {
+	0%,
+	22%,
+	42% {
+		background: mediumblue;
+	}
+	20%,
+	40%,
+	60% {
+		background: rgb(28, 39, 97);
+	}
+	62%,
+	100% {
+		background: green;
+	}
+}
+
+.answer.wrong {
+	animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+	0%,
+	22%,
+	42% {
+		background: mediumblue;
+	}
+	20%,
+	40%,
+	60% {
+		background: rgb(28, 39, 97);
+	}
+	62%,
+	100% {
+		background: crimson;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.answer {
+		width: 100px;
+	}
+	.question-title h3 {
+		font-size: 1rem;
+	}
+}
